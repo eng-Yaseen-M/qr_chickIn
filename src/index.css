@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", Tahoma, "Segoe UI", sans-serif;
+
+  --color-ink: #12202b;
+  --color-ink-2: #3b4b58;
+  --color-muted: #66757f;
+  --color-fog: #edf0f3;
+  --color-surface: #ffffff;
+  --color-line: #d8dee4;
+  --color-danger: #c62f3a;
+
+  --color-student: #0f9d6b;
+  --color-student-soft: #e1f4ec;
+  --color-org: #2f6fed;
+  --color-org-soft: #e5edfd;
+  --color-vip: #d8960b;
+  --color-vip-soft: #fbf0d9;
+  --color-doctor: #7b3fe4;
+  --color-doctor-soft: #eee6fc;
+
+  --radius-card: 1rem;
+  --radius-control: 0.625rem;
+}
+
+@layer base {
+  body {
+    @apply bg-fog text-ink font-sans antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+  button {
+    cursor: pointer;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+}
